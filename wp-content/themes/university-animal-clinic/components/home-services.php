@@ -80,44 +80,40 @@
                                 </div>
                                 <div class="d-lg-none">
                                     <div class="service-owl owl-carousel owl-theme">
-                                        <div class="item">
-                                            <div class="row">
-                                            <?php if(have_rows('slider_item')): ?>
-                                                <?php while ( have_rows('slider_item') ) : the_row(); ?>
-                                                    <?php 
-                                                        $image = get_sub_field('image');
-                                                        $icon = get_sub_field('icon');
-                                                        $title = get_sub_field('title');
-                                                        $button = get_sub_field('button');
-                                                    ?>
-                                                    <div class="col-md-6">
-                                                        <div class="service-box">
-                                                            <div class="service-image">
-                                                                <?php if($image): ?>
-                                                                    <img src="<?php echo $image; ?>" alt="Service" />
+                                    <?php if(have_rows('slider_item')): ?>
+                                        <?php while ( have_rows('slider_item') ) : the_row(); ?>
+                                            <?php 
+                                                $image = get_sub_field('image');
+                                                $icon = get_sub_field('icon');
+                                                $title = get_sub_field('title');
+                                                $button = get_sub_field('button');
+                                            ?>
+                                            <div class="item">
+                                                <div class="service-box">
+                                                    <div class="service-image">
+                                                        <?php if($image): ?>
+                                                            <img src="<?php echo $image; ?>" alt="Service" />
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="service-info">
+                                                        <div class="service-inner">
+                                                            <div class="service-icon comman-icon">
+                                                                <?php if($icon): ?>
+                                                                    <span class="icon-<?php echo $icon; ?>"></span>
                                                                 <?php endif; ?>
                                                             </div>
-                                                            <div class="service-info">
-                                                                <div class="service-inner">
-                                                                    <div class="service-icon comman-icon">
-                                                                        <?php if($icon): ?>
-                                                                            <span class="icon-<?php echo $icon; ?>"></span>
-                                                                        <?php endif; ?>
-                                                                    </div>
-                                                                    <?php if($title): ?>
-                                                                    <div class="service-title"><?php echo $title; ?></div>
-                                                                    <?php endif; ?>
-                                                                    <?php if($button): ?>
-                                                                    <a class="learn-more" href="<?php echo $button['url']; ?>"><?php echo $button['title']; ?> <span class="icon-arrow-right"></span></a>
-                                                                    <?php endif; ?>
-                                                                </div>
-                                                            </div>
+                                                            <?php if($title): ?>
+                                                            <div class="service-title"><?php echo $title; ?></div>
+                                                            <?php endif; ?>
+                                                            <?php if($button): ?>
+                                                            <a class="learn-more" href="<?php echo $button['url']; ?>"><?php echo $button['title']; ?> <span class="icon-arrow-right"></span></a>
+                                                            <?php endif; ?>
                                                         </div>
                                                     </div>
-                                                <?php endwhile; ?>
-                                            <?php endif; ?>
+                                                </div>
                                             </div>
-                                        </div>
+                                        <?php endwhile; ?>
+                                    <?php endif; ?>
                                     </div>
                                 </div>
                             </div>

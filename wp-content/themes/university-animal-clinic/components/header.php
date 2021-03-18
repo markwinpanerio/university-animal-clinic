@@ -87,91 +87,7 @@
                                 	'depth' => 3
                                 ) );
                             ?>
-
-                            <!-- <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">Services</a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="#">Telemedicine/Virtual
-                                                Veterinary Services</a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 1
-                                                    </a></li>
-                                                <li class="nav-item"><a class="nav-link" href="#"> Dropdown item
-                                                        2</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="#"> Dropdown item
-                                                        3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Wellness Plans</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Vaccinations</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Exotic Pet Care</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Laser Therapy</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Dental Cleaning</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Elderly Pet Care
-                                                Services</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Pet Microchipping</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Dog Grooming Services</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="#">How to Treat
-                                                Heartworms</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Flea & Tick Prevention</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Surgery and Specialty
-                                                Services for Pets</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Treating Itchy Skin & Pet Allergies</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0);"
-                                        data-toggle="dropdown">Types of
-                                        Animals</a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 1 </a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 2</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 3</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 4</a>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0);"
-                                        data-toggle="dropdown">Resources</a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 1 </a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 2</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 3</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 4</a>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Testimonials</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0);"
-                                        data-toggle="dropdown">Service
-                                        Area</a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 1 </a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 2</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 3</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 4</a>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0);"
-                                        data-toggle="dropdown">About Us</a>
-                                    <ul class="submenu dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 1 </a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 2</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 3</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#"> Dropdown item 4</a>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact Us</a>
-                                </li>
-                            </ul> -->
+                            
                         </div>
                     </nav>
                     <div class="header-search">
@@ -194,7 +110,9 @@
     <div class="mobile-bottom-header">
         <div class="call-us">
             <span>call us </span>
-            <a href="tel:9413557707">941-355-7707</a>
+            <?php if(get_field('contact_number', 'theme_options')): ?>
+            <a href="tel:<?php echo the_field('contact_number', 'theme_options'); ?>"><?php echo the_field('contact_number', 'theme_options'); ?></a>
+            <?php endif; ?>
         </div>
     </div>
 </header>
